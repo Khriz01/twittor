@@ -1,12 +1,24 @@
 
+//capturar url del navegador ya sea el localhost y el de la web
+var url = window.location.href;
+//path del service worker
+var swLocation = '/twittor/sw.js';
 
 //registro del service worker
 
 if (navigator.serviceWorker) {
+
+
+    //validar ubiacion del sw
+    if (url.includes('localhost')){
+        swLocation = "/sw.js";
+    }
+
     //console.log('Podemos usar SW');
     //proceso de instalacion del SWS, que se debe de poner en la raiz de la app web
-    navigator.serviceWorker.register('https://khriz01.github.io/twittor/sw.js'); //esto tira un error a la hora de desplegarlo en github,
+    navigator.serviceWorker.register(swLocation); //esto tira un error a la hora de desplegarlo en github,
     //ya que esta no es la raiz de la aplicacion, en mi caso la raiz de la app es https://khriz01.github.io/
+    //en desarrollo este sw esta bien en produccion no
 
 }
 

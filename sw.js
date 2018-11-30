@@ -8,8 +8,10 @@ const INMUTABLE_CACHE = 'inmutable-v1';
 
 //esta variable va contener todo lo que mi app necesita todo el contenido estatico
 //Configuracion del service worker
+
+//hay que verificar que ningun archivo este en la raiz, pero tenemos el problema de la pleca
 const APP_SHELL = [
-    '/',
+    //'/', //el slash sirve en desarrollo pero en produccion no
     'index.html',
     'css/style.css',
     'img/favicon.ico',
