@@ -5,7 +5,8 @@
 if (navigator.serviceWorker) {
     //console.log('Podemos usar SW');
     //proceso de instalacion del SWS, que se debe de poner en la raiz de la app web
-    navigator.serviceWorker.register('/sw.js');
+    navigator.serviceWorker.register('sw.js'); //esto tira un error a la hora de desplegarlo en github,
+    //ya que esta no es la raiz de la aplicacion, en mi caso
 
 }
 
